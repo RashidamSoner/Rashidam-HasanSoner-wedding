@@ -162,3 +162,21 @@ transition:.3s;
 background:#b18f3d;
 
 }
+.countdown{
+    padding:80px 20px;
+    text-align:center;
+    background:#fff;
+}
+
+.countdown h2{
+    font-size:34px;
+    margin-bottom:40px;
+    color:#b18f3d;
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
