@@ -180,3 +180,28 @@ background:#b18f3d;
     gap:18px;
     flex-wrap:wrap;
 }
+.time-box{
+    width:110px;
+    height:110px;
+    background:white;
+    border:2px solid #C8A54B;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.time-box span{
+    font-size:38px;
+    font-weight:bold;
+    color:#C8A54B;
+}
+
+.time-box small{
+    margin-top:8px;
+    color:#777;
+    font-size:14px;
+    letter-spacing:1px;
+}
