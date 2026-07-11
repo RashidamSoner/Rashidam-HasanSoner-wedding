@@ -3,7 +3,7 @@
 
 const intro = document.getElementById("intro");
 const button = document.getElementById("openInvitation");
-
+const bgMusic = document.getElementById("bgMusic");
 button.addEventListener("click", () => {
 
     intro.style.opacity = "0";
@@ -12,7 +12,7 @@ button.addEventListener("click", () => {
     setTimeout(() => {
         intro.style.display = "none";
     }, 1000);
-
+bgMusic.play().catch(() => {});
     window.scrollTo({
         top: 0,
         behavior: "smooth"
