@@ -308,3 +308,63 @@ border:1px solid rgba(212,175,55,.35);
 pointer-events:none;
 
 }
+.intro-top{
+    color:#d4af37;
+    letter-spacing:4px;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
+    text-transform:uppercase;
+}
+
+.gold-name{
+    font-family:"Cormorant Garamond",serif;
+    color:#d4af37;
+    font-size:64px;
+    line-height:1.15;
+    font-weight:500;
+    text-shadow:0 0 20px rgba(212,175,55,.45);
+    margin-bottom:40px;
+}
+
+.wax-seal{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    margin:0 auto 35px;
+    background:linear-gradient(145deg,#9b5d14,#d4af37,#8a4b0a);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:42px;
+    box-shadow:0 0 35px rgba(212,175,55,.55);
+}
+
+.gold-button{
+    background:#c79b35;
+    color:white;
+    border:none;
+    padding:18px 55px;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.gold-button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px rgba(212,175,55,.6);
+}
+
+.scroll-icon{
+    color:#d4af37;
+    font-size:34px;
+    margin-top:28px;
+    animation:floatArrow 1.6s infinite;
+}
+
+@keyframes floatArrow{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(10px);}
+}
