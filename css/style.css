@@ -389,3 +389,23 @@ pointer-events:none;
     color:#fff4cf;
     font-size:56px;
 }
+.corner{
+    position:absolute;
+    color:#d4af37;
+    font-size:28px;
+    opacity:.8;
+}
+
+.top-left{
+    top:18px;
+    left:18px;
+}
+
+.top-right{
+    top:18px;
+    right:18px;
+}
+.gold-frame{
+    position:relative;
+    overflow:hidden;
+}
