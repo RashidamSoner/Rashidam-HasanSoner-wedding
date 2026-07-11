@@ -205,3 +205,27 @@ background:#b18f3d;
     font-size:14px;
     letter-spacing:1px;
 }
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.flower{
+    position:absolute;
+    font-size:70px;
+    color:#C8A54B;
+    opacity:.18;
+    user-select:none;
+}
+
+.flower-left{
+    top:20px;
+    left:20px;
+    transform:rotate(-20deg);
+}
+
+.flower-right{
+    top:20px;
+    right:20px;
+    transform:rotate(20deg);
+}
