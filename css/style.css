@@ -518,3 +518,20 @@ background:#b18f3d;
     margin-bottom:34px;
 
 }
+@keyframes heroFade {
+
+  0%{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+.hero-content{
+  animation:heroFade 1.5s ease forwards;
+}
