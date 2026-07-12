@@ -694,3 +694,77 @@ body::before{
     display:block;
     font-size:46px;
 }
+/* ===========================
+   ENVELOPE FLAP + SEAL
+=========================== */
+
+.envelope-flap{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:260px;
+    background:#121212;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    border:2px solid rgba(214,173,73,.35);
+    border-bottom:none;
+    transform-origin:top;
+    transition:1s ease;
+    z-index:5;
+}
+
+.envelope-flap::before{
+    content:"";
+    position:absolute;
+    inset:18px 18px auto 18px;
+    height:1px;
+    background:rgba(214,173,73,.45);
+}
+
+.seal{
+    position:absolute;
+    left:50%;
+    bottom:68px;
+    transform:translateX(-50%);
+    width:92px;
+    height:92px;
+    border-radius:50%;
+    cursor:pointer;
+    z-index:10;
+}
+
+.seal img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:contain;
+    filter:drop-shadow(0 8px 12px rgba(0,0,0,.55));
+}
+
+.touch-text{
+    position:absolute;
+    left:50%;
+    bottom:-40px;
+    transform:translateX(-50%);
+    color:#d6ad49;
+    letter-spacing:3px;
+    font-size:14px;
+    text-transform:uppercase;
+    animation:pulseText 2s infinite;
+}
+
+@keyframes pulseText{
+
+0%{
+opacity:.4;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+opacity:.4;
+}
+
+}
