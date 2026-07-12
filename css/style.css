@@ -330,20 +330,6 @@ pointer-events:none;
     margin-bottom:45px;
 }
 
-.wax-seal{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    margin:0 auto 35px;
-    background:linear-gradient(145deg,#9b5d14,#d4af37,#8a4b0a);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    font-size:42px;
-    box-shadow:0 0 35px rgba(212,175,55,.55);
-}
-
 .gold-button{
     background:#c79b35;
     color:white;
@@ -376,8 +362,8 @@ pointer-events:none;
     height:140px;
     border-radius:50%;
     margin:40px auto;
-    background:radial-gradient(circle at 35% 35%, #ffd978, #c58b18 70%);
-    border:6px solid #8b5a00;
+    background: transparent;
+    border: none;
     display:flex;
     align-items:center;
     justify-content:center;
