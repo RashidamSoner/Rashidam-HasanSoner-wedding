@@ -558,3 +558,25 @@ background:#b18f3d;
 .flower-right{
   animation:flowerFloat 6s ease-in-out infinite reverse;
 }
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(214,173,73,.08), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(255,215,120,.06), transparent 40%);
+    animation:ambientGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes ambientGlow{
+    0%{
+        opacity:.5;
+        transform:scale(1);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1.05);
+    }
+}
