@@ -4,7 +4,8 @@
 const intro = document.getElementById("intro");
 const button = document.getElementById("openInvitation");
 const bgMusic = document.getElementById("bgMusic");
-button.addEventListener("click", () => {
+const seal = document.querySelector(".wax-seal");
+seal.addEventListener("click", () => {
 
     intro.style.opacity = "0";
     intro.style.pointerEvents = "none";
