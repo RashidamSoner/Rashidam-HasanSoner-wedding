@@ -386,12 +386,18 @@ pointer-events:none;
         inset 0 0 20px rgba(255,255,255,.25),
         0 15px 35px rgba(0,0,0,.45);
 }
-
-.wax-seal::before{
+.wax-seal img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+/* .wax-seal::before{
     content:"♡";
     color:#fff4cf;
     font-size:56px;
 }
+*/
 .corner{
     position:absolute;
     color:#d4af37;
