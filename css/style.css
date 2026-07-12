@@ -318,13 +318,16 @@ pointer-events:none;
 }
 
 .gold-name{
-    font-family:"Cormorant Garamond",serif;
+    font-family:'Great Vibes', cursive;
     color:#d4af37;
-    font-size:64px;
-    line-height:1.15;
-    font-weight:500;
-    text-shadow:0 0 20px rgba(212,175,55,.45);
-    margin-bottom:40px;
+    font-size:82px;
+    line-height:0.95;
+    font-weight:400;
+    text-align:center;
+    text-shadow:
+        0 0 10px rgba(212,175,55,.35),
+        0 0 30px rgba(212,175,55,.20);
+    margin-bottom:45px;
 }
 
 .wax-seal{
