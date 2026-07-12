@@ -580,3 +580,30 @@ body::before{
         transform:scale(1.05);
     }
 }
+@media (max-width:768px){
+
+.hero-content{
+    padding:24px;
+}
+
+.gold-name{
+    font-size:62px;
+}
+
+.gold-name span{
+    font-size:42px;
+}
+
+.wax-seal img{
+    width:95px;
+}
+
+.event-card{
+    padding:26px;
+}
+
+.time-box{
+    min-width:72px;
+}
+
+}
