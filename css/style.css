@@ -358,25 +358,14 @@ pointer-events:none;
     50%{transform:translateY(10px);}
 }
 .wax-seal{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    margin:40px auto;
-    background: transparent;
-    border: none;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:48px;
-    box-shadow:
-        inset 0 0 20px rgba(255,255,255,.25),
-        0 15px 35px rgba(0,0,0,.45);
+    width:120px;
+    margin:25px auto;
 }
+
 .wax-seal img{
     width:100%;
-    height:100%;
-    object-fit:contain;
     display:block;
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.45));
 }
 /* .wax-seal::before{
     content:"♡";
