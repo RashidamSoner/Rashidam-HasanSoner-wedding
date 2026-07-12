@@ -535,3 +535,26 @@ background:#b18f3d;
 .hero-content{
   animation:heroFade 1.5s ease forwards;
 }
+@keyframes flowerFloat {
+
+  0%{
+    transform:translateY(0) rotate(-8deg);
+  }
+
+  50%{
+    transform:translateY(-8px) rotate(-5deg);
+  }
+
+  100%{
+    transform:translateY(0) rotate(-8deg);
+  }
+
+}
+
+.flower-left{
+  animation:flowerFloat 6s ease-in-out infinite;
+}
+
+.flower-right{
+  animation:flowerFloat 6s ease-in-out infinite reverse;
+}
