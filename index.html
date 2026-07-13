@@ -2,176 +2,1398 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rashidam & Hasan Soner Düğün Davetiyesi</title>
+    
+    <!-- Premium Yazı Tipleri ve İkonlar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { width: 100%; min-height: 100vh; font-family: 'Montserrat', sans-serif; background-color: #f6efe2; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
 
-    <title>Rashidam & Hasan Soner</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        /* GİZLİ YOUTUBE MÜZİK OYNATICI */
+        #music-player { position: absolute; width: 0; height: 0; border: 0; visibility: hidden; }
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+        /* LÜKS MÜZİK BUTONU */
+        .audio-control {
+            position: fixed; top: 20px; right: 20px; z-index: 2000;
+            background: rgba(255, 255, 255, 0.85); border: 1px solid #b89754;
+            color: #b89754; width: 42px; height: 42px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none;
+        }
 
+        /* ----------------------------------------------- */
+        /* KOMPLE MAT SİYAH KÂĞIT DOKULU ZARF SİSTEMİ */
+        #envelope-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #030303;
+            z-index: 9999; display: flex; justify-content: center; align-items: center;
+            transition: transform 1.6s cubic-bezier(0.76, 0, 0.24, 1), opacity 1.6s ease;
+            perspective: 2500px; /* 3D derinlik artırıldı */
+        }
+        #envelope-screen.open {
+            transform: translateY(-100vh); opacity: 0; pointer-events: none;
+        }
+
+            .envelope-body{
+    position:relative;
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:90px 0 110px;
+
+    z-index:25;
+    isolation:isolate;
+
+    perspective:2200px;
+    transform-style:preserve-3d;
+    transform:translateZ(0);
+
+    overflow:hidden;
+
+    border-radius:10px;
+    border:1px solid rgba(212,175,55,.08);
+
+    background:
+        radial-gradient(circle at 50% 8%,
+            rgba(255,223,120,.12) 0%,
+            rgba(255,223,120,.04) 18%,
+            transparent 45%),
+
+        linear-gradient(
+            180deg,
+            #1c1c1c 0%,
+            #111111 30%,
+            #090909 68%,
+            #020202 100%
+        ),
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.035) 0%,
+            transparent 24%,
+            rgba(255,255,255,.018) 48%,
+            transparent 72%
+        );
+
+    background-blend-mode:
+        screen,
+        normal,
+        overlay;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.06),
+        inset 0 -25px 55px rgba(0,0,0,.55),
+        inset 0 0 90px rgba(255,255,255,.02),
+        0 45px 90px rgba(0,0,0,.72),
+        0 18px 40px rgba(0,0,0,.42);
+
+    backdrop-filter:
+        contrast(1.05)
+        saturate(1.1);
+
+    backface-visibility:hidden;
+
+    animation:envelopeFloat 7s ease-in-out infinite;
+}
+        /* Dijital ve Modern Harita Butonu */
+        .map-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #bfa15f 0%, #8a6f3e 100%);
+            color: #ffffff !important;
+            text-decoration: none !important;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(138, 111, 62, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* Butona tıklandığında dijital tepki */
+        .map-button:active {
+            transform: scale(0.96);
+            box-shadow: 0 2px 8px rgba(138, 111, 62, 0.2);
+        }
+
+ 
+                /* Fotoğraftaki lüks ağır karton/deri dokusu efekti */
+        .envelope-body::before, .envelope-flap::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23fff' surfaceScale='1.5'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.7'/%3E%3C/svg%3E");
+            background-size: 220% 100%;
+            animation: goldShine 7s linear infinite;
+        }
+
+
+        /* YAVAŞÇA YUKARI KATLANAN 3D ÜÇGEN KAPAK */
+        .envelope-flap{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:56%;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    z-index:60;
+
+    overflow:hidden;
+    isolation:isolate;
+
+    transform-origin:top center;
+    transform-style:preserve-3d;
+    backface-visibility:hidden;
+    will-change:transform;
+
+    background:
+        radial-gradient(
+            circle at 50% 14%,
+            rgba(255,225,140,.16) 0%,
+            rgba(255,225,140,.05) 18%,
+            transparent 46%
+        ),
+
+        linear-gradient(
+            180deg,
+            #242424 0%,
+            #151515 24%,
+            #090909 58%,
+            #020202 100%
+        ),
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.05) 0%,
+            transparent 28%,
+            rgba(255,255,255,.025) 52%,
+            transparent 100%
+        );
+
+    background-blend-mode:
+        screen,
+        normal,
+        overlay;
+
+    border-top:1px solid rgba(212,175,55,.08);
+
+    box-shadow:
+        0 24px 55px rgba(0,0,0,.82),
+        inset 0 1px rgba(255,255,255,.06),
+        inset 0 -20px 35px rgba(0,0,0,.58);
+
+    transition:
+        transform 1.8s cubic-bezier(.66,0,.34,1),
+        opacity 1.6s ease;
+
+        border-top:1px solid rgba(255,230,160,.10);
+
+filter:
+    drop-shadow(0 2px 2px rgba(255,215,120,.12));
+
+    border-left:1px solid rgba(255,215,120,.18);
+border-right:1px solid rgba(255,215,120,.18);
+
+box-shadow:
+    0 24px 55px rgba(0,0,0,.82),
+    inset 0 1px rgba(255,255,255,.06),
+    inset 0 -20px 35px rgba(0,0,0,.58),
+    inset 0 0 0 1px rgba(212,175,55,.06);
+}
+
+.envelope-flap::after{
+    content:"";
+    position:absolute;
+    inset:-25%;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 30%,
+            rgba(255,255,255,.05) 42%,
+            rgba(255,243,190,.22) 47%,
+            rgba(212,175,55,.42) 50%,
+            rgba(255,243,190,.22) 53%,
+            rgba(255,255,255,.05) 58%,
+            transparent 70%
+        );
+
+    background-size:260% 100%;
+
+    transform:translateX(-220%) skewX(-28deg);
+
+    mix-blend-mode:screen;
+
+    filter:blur(.8px);
+
+    opacity:.95;
+
+    will-change:transform,opacity;
+
+    animation:flapShine 7.5s linear infinite;
+
+    pointer-events:none;
+}   
+        
+        /* İç gölge illüzyonu (Kapağın altına düşen gölge) */
+        .envelope-flap-shadow {
+            position: absolute; top: 0; left: 0; width: 100%; height: 55%;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+            background: transparent;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+            z-index:14;
+            pointer-events: none;
+            transition: opacity 1s ease;
+        }
+
+        /* Kapak Yavaşça Yukarı Doğru Gerçekçi Katlanıyor */
+        #envelope-screen.active .envelope-flap {
+            transform: rotateX(140deg); /* Havaya doğru kalkma hissi */
+            opacity: 0.9;
+        }
+        #envelope-screen.active .envelope-flap-shadow {
+            opacity: 0;
+        }
+
+        /* Altın Çerçeve Çizgileri */
+        .envelope-gold-frame {
+            position: absolute; top: 20px; bottom: 20px; left: 20px; right: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3); pointer-events: none; z-index: 2;
+        }
+
+        /* Üst Bölüm Yazıları */
+        .envelope-header { text-align: center; z-index: 10; padding: 0 20px; position: relative; }
+        .env-quote { font-family: 'Cinzel', serif; color: #d4af37; font-size: 0.75rem; letter-spacing: 5px; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.9); }
+        .env-names { font-family: 'Great Vibes', cursive; color: #f3cf7a; font-size: 3.5rem; line-height: 1.2; text-shadow: 2px 4px 15px rgba(0,0,0,0.95); }
+
+        /* GERÇEK MÜHÜRÜN İKİYE BÖLÜNME ALANI */
+        .seal-wrapper{
+    position:absolute;
+
+    left:50%;
+    top:53%;
+
+    transform:translate(-50%,-50%);
+
+    width:165px;
+    height:165px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:95;
+
+    transform-origin:center center;
+
+    transition:
+        transform .25s ease,
+        filter .35s ease;
+
+    filter:
+        drop-shadow(0 18px 26px rgba(0,0,0,.35));
+
+    animation:sealFloat 4s ease-in-out infinite;
+}
+        .seal-wrapper:hover{
+    transform:translate(-50%,-50%) scale(1.08);
+
+    filter:
+        drop-shadow(0 22px 40px rgba(0,0,0,.42));
+
+    animation-play-state:paused;
+}
+        
+        .seal-half-box{
+    position:relative;
+
+    width:50%;
+    height:100%;
+
+    overflow:hidden;
+
+    transition:
+        transform 1.45s cubic-bezier(.66,0,.34,1),
+        opacity .95s ease,
+        filter .8s ease;
+
+    will-change:transform;
+}
+        .seal-half-box img{
+    position:absolute;
+
+    top:0;
+
+    width:165px;
+    height:165px;
+
+    max-width:none;
+
+    object-fit:contain;
+
+    user-select:none;
+    pointer-events:none;
+
+    filter:
+        drop-shadow(0 2px 2px rgba(255,255,255,.08));
+}
+        .seal-left-side img { left: 0; }
+        .seal-right-side img { right: 0; }
+
+        .seal-wrapper.break .seal-left-side{
+    transform:
+        translateX(-34px)
+        rotate(-16deg);
+
+    opacity:0;
+}
+
+.seal-wrapper.break .seal-right-side{
+    transform:
+        translateX(34px)
+        rotate(16deg);
+
+    opacity:0;
+}
+
+        /* Mühür Kırılma Animasyonu da Kapakla Senkronize Yavaşlatıldı */
+        #envelope-screen.active .seal-left-side { transform: translateX(-140px) rotate(-20deg); opacity: 0; }
+        #envelope-screen.active .seal-right-side { transform: translateX(140px) rotate(20deg); opacity: 0; }
+
+        .hint-text { color: #d4af37; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 4px; z-index: 10; animation: softPulse 2s infinite ease-in-out; text-shadow: 0 2px 5px rgba(0,0,0,0.9); position: relative; }
+
+        /* ----------------------------------------------- */
+        /* İÇ DAVETİYE KARTI TASARIMI */
+        .main-card {
+            width: 100%; max-width: 500px; margin: 0 auto; min-height: 100vh;
+            background: #fffdf8;
+            background-image: radial-gradient(circle at top, #fbf7ee 0%, #f3eae0 70%, #e6d9c5 100%);
+            padding: 50px 24px 80px 24px;
+            box-shadow: 0 0 40px rgba(163, 132, 80, 0.15);
+            text-align: center; position: relative;
+        }
+
+        .card-headline { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 4px; color: #8a7343; margin-bottom: 25px; margin-top: 30px; font-weight: 600; }
+        .card-names { font-family: 'Cinzel', serif; font-size: 2.2rem; color: #b89754; font-weight: 400; letter-spacing: 2px; line-height: 1.4; }
+        .card-ampersand { font-family: 'Great Vibes', cursive; font-size: 3.2rem; color: #9c8863; display: block; margin: 5px 0; }
+        .card-date-main { font-family: 'Cinzel', serif; font-size: 1.25rem; color: #524326; letter-spacing: 3px; margin: 30px 0; font-weight: 700; }
+
+        .divider-heart { color: #b89754; font-size: 12px; margin: 20px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .divider-heart::before, .divider-heart::after { content: ""; width: 40px; height: 1px; background: rgba(184, 151, 84, 0.3); }
+
+        /* DAİRESEL SAYAÇLAR */
+        .counter-section { margin: 40px 0; }
+        .counter-title { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 3px; color: #8a7343; margin-bottom: 20px; font-weight: 600; }
+        .counter-grid { display: flex; justify-content: center; gap: 12px; }
+        .counter-box {
+    background: linear-gradient(
+        180deg,
+        #fffef9 0%,
+        #faf5ea 100%
+    );
+
+    border:2px solid rgba(212,175,55,.35);
+    border-radius:16px;
+
+    width:74px;
+    height:74px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.12),
+        inset 0 1px rgba(255,255,255,.9);
+}
+        .counter-num{
+    font-family:'Cinzel', serif;
+    font-size:1.65rem;
+    font-weight:700;
+    line-height:1;
+    color:#c79b2b;
+
+    text-shadow:
+        0 1px 0 #fffbe6,
+        0 2px 4px rgba(255,255,255,.6),
+        0 6px 14px rgba(212,175,55,.28);
+
+    letter-spacing:1px;
+}
+        .counter-label{
+    margin-top:8px;
+    font-family:'Montserrat',sans-serif;
+    font-size:.62rem;
+    font-weight:600;
+    letter-spacing:2.6px;
+    text-transform:uppercase;
+
+    color:#8a7343;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.65);
+
+    opacity:.95;
+}
+
+        /* İKONLU MENÜ GEZİNTİSİ */
+        .nav-menu-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;
+            border-top: 1px solid rgba(184, 151, 84, 0.2); border-bottom: 1px solid rgba(184, 151, 84, 0.2);
+            padding: 20px 0; margin: 40px 0;
+        }
+        .nav-btn-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+    color:#7a6130;
+
+    padding:18px 10px;
+    min-height:92px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.92) 0%,
+        rgba(247,242,232,.96) 100%
+    );
+
+    border:1px solid rgba(212,175,55,.25);
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.08),
+        inset 0 1px rgba(255,255,255,.95);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.nav-btn-item:hover{
+    transform:translateY(-6px);
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,1) 0%,
+        rgba(250,245,234,1) 100%
+    );
+
+    border-color:rgba(212,175,55,.55);
+
+    box-shadow:
+        0 18px 34px rgba(0,0,0,.14),
+        0 0 18px rgba(212,175,55,.18);
+
+    color:#5d4721;
+}
+
+.nav-btn-item i{
+    display:block;
+
+    font-size:1.55rem;
+
+    margin-bottom:10px;
+
+    color:#c89d2b;
+
+    text-shadow:
+        0 1px 0 #fff8cf,
+        0 3px 10px rgba(212,175,55,.35);
+
+    transition:
+        transform .35s ease,
+        color .35s ease,
+        text-shadow .35s ease;
+}
+
+.nav-btn-item:hover i{
+    transform:scale(1.12);
+    color:#dcb648;
+}
+
+        /* DÜĞÜN BİLGİLERİ */
+        .details-title { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 3px; color: #8a7343; margin-bottom: 25px; font-weight: 600; }
+        .details-row { display: flex; justify-content: space-around; margin-bottom: 40px; gap: 10px; }
+        .detail-block { flex: 1; border-right: 1px solid rgba(184, 151, 84, 0.25); padding: 0 5px; }
+        .detail-block:last-child { border-right: none; }
+        .detail-block i { font-size: 1.2rem; color: #b89754; margin-bottom: 8px; }
+        .detail-block h4 { font-family: 'Cinzel', serif; font-size: 0.7rem; color: #524326; margin-bottom: 4px; font-weight: 700; }
+        .detail-block p { font-size: 0.75rem; color: #666; line-height: 1.4; }
+
+        /* HARİTA KARTI */
+        .map-section-title { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 3px; color: #8a7343; margin-bottom: 20px; font-weight: 600; }
+        .map-embed-box {
+            background: #ffffff; border: 1px solid rgba(184, 151, 84, 0.2); border-radius: 12px;
+            padding: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.04); margin-bottom: 40px;
+        }
+        .map-info-text { margin-bottom: 15px; }
+        .map-info-text h3 { font-family: 'Cinzel', serif; font-size: 0.9rem; color: #333; margin-bottom: 4px; }
+        .map-info-text p { font-size: 0.75rem; color: #666; margin-bottom: 12px; }
+        
+        .gold-action-btn {
+            display: inline-block; background: #a38450; color: #fff; text-decoration: none;
+            padding: 11px 24px; border-radius: 20px; font-size: 0.7rem; font-family: 'Cinzel', serif;
+            letter-spacing: 1px; font-weight: 600; box-shadow: 0 4px 12px rgba(163, 132, 80, 0.3);
+            margin-bottom: 15px; transition: background 0.3s;
+        }
+        .gold-action-btn:hover { background: #8e7243; }
+        .map-iframe { width: 100%; height: 180px; border-radius: 8px; border: 0; }
+
+        /* SÖZ VE ALT ALAN */
+        .footer-poem-area { margin-top: 40px; padding: 0 10px; }
+        .footer-main-quote { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: #8a7343; margin-bottom: 15px; line-height: 1.3; }
+        .footer-sub-text { font-size: 0.8rem; color: #555; line-height: 1.7; max-width: 90%; margin: 0 auto; }
+
+        @keyframes softPulse {
+            0% { opacity: 0.4; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.4; transform: scale(0.98); }
+        }
+        /* ➔ LÜKS SARAY TARZI OYMANLI KÖŞE MOTİFLERİ (ORNAMENT FRAME) */
+.envelope-ornament-frame{
+    position:absolute;
+
+    top:18px;
+    left:18px;
+    right:18px;
+    bottom:18px;
+
+    pointer-events:none;
+
+    z-index:80;
+}
+
+/* Daha kalın ve belirgin altın iç hat çizgisi */
+.envelope-ornament-frame::after {
+    content: ""; 
+    position: absolute; 
+    top: 15px; 
+    bottom: 15px; 
+    left: 15px; 
+    right: 15px;
+    border: 2px solid rgba(212, 175, 55, 0.45); /* Çizgi kalınlığı 2px yapıldı ve parlatıldı */
+}
+
+/* Köşe oymalarının çizgilerini asil bir şekilde kalınlaştırdığımız yeni yapı */
+.ornament{
+    position:absolute;
+
+    width:78px;
+    height:78px;
+
+    opacity:1;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 C30,0 50,10 60,30 C65,40 55,50 45,45 C35,40 40,25 25,25 C15,25 15,35 25,35 C35,35 30,55 50,60 C70,65 80,45 80,20 C80,10 90,0 100,0 M0,0 C0,30 10,50 30,60 C40,65 50,55 45,45 C40,35 25,40 25,25 C25,15 35,15 35,25 C35,35 55,30 60,50 C65,70 45,80 20,80 C10,80 0,90 0,100' fill='none' stroke='%23d4af37' stroke-width='3.8'/%3E%3Ccircle cx='25' cy='25' r='3' fill='%23d4af37'/%3E%3Ccircle cx='45' cy='45' r='2.5' fill='%23d4af37'/%3E%3C/svg%3E");
+
+    background-size:contain;
+    background-repeat:no-repeat;
+
+    filter:
+        drop-shadow(0 0 3px rgba(255,220,120,.45))
+        drop-shadow(0 0 10px rgba(212,175,55,.18));
+}
+
+.top-left{
+    top:-10px;
+    left:-10px;
+}
+
+.top-right{
+    top:-10px;
+    right:-10px;
+    transform:rotate(90deg);
+}
+
+.bottom-left{
+    bottom:-10px;
+    left:-10px;
+    transform:rotate(-90deg);
+}
+
+.bottom-right{
+    bottom:-10px;
+    right:-10px;
+    transform:rotate(180deg);
+}
+
+/* ===============================
+   PREMIUM FLOAT ANIMATION
+=============================== */
+
+@keyframes envelopeFloat {
+    0%{
+        transform:translateY(0) rotateZ(0deg);
+    }
+
+    25%{
+        transform:translateY(-4px) rotateZ(-0.25deg);
+    }
+
+    50%{
+        transform:translateY(-8px) rotateZ(0deg);
+    }
+
+    75%{
+        transform:translateY(-4px) rotateZ(.25deg);
+    }
+
+    100%{
+        transform:translateY(0) rotateZ(0deg);
+    }
+}
+    @keyframes goldShine {
+    0% {
+        transform: translateX(-150%) skewX(-25deg);
+        opacity: 0;
+    }
+    30% {
+        opacity: .25;
+    }
+    100% {
+        transform: translateX(250%) skewX(-25deg);
+        opacity: 0;
+    }
+    @keyframes sealGlow {
+    0%,100%{
+        transform:scale(1);
+        filter:drop-shadow(0 0 8px rgba(212,175,55,.25));
+    }
+
+    50%{
+        transform:scale(1.03);
+        filter:drop-shadow(0 0 18px rgba(212,175,55,.65));
+    }
+    @keyframes goldSweep {
+    0% {
+        background-position: -250% 0;
+    }
+    100% {
+        background-position: 250% 0;
+    }
+}
+
+.envelope-body::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(
+        115deg,
+        transparent 35%,
+        rgba(255,255,255,.08) 45%,
+        rgba(255,230,150,.45) 50%,
+        rgba(255,255,255,.08) 55%,
+        transparent 65%
+    );
+    background-size:250% 100%;
+    animation:goldSweep 8s linear infinite;
+    mix-blend-mode:screen;
+}  
+     @keyframes sparkle {
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:0;
+    }
+    50%{
+        opacity:.8;
+    }
+    100%{
+        transform:translateY(-25px) scale(1.4);
+        opacity:0;
+    }
+}
+
+.sparkle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#d4af37;
+    box-shadow:0 0 10px #ffd86a;
+    animation:sparkle 3.5s infinite;
+} 
+    /* ===========================
+   PREMIUM ENVELOPE V2
+===========================*/
+
+.envelope-header{
+    position:absolute;
+
+    top:95px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    z-index:80;
+
+    pointer-events:none;
+}
+
+.env-quote{
+    font-family:'Cinzel',serif;
+    color:#d4af37;
+    font-size:.72rem;
+    letter-spacing:6px;
+    margin-bottom:28px;
+    text-transform:uppercase;
+    opacity:.9;
+}
+
+.env-names{
+    font-family:'Great Vibes',cursive;
+
+    font-size:4.9rem;
+    line-height:.95;
+    font-weight:400;
+
+    letter-spacing:.5px;
+
+    color:#f3d37a;
+
+    text-align:center;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.35),
+        0 0 10px rgba(212,175,55,.22),
+        0 8px 22px rgba(0,0,0,.82);
+
+    filter:drop-shadow(0 3px 12px rgba(212,175,55,.10));
+}
+
+.env-names span{
+
+    display:block;
+
+    font-family:'Cinzel';
+
+    font-size:1.25rem;
+
+    margin:8px 0;
+
+    color:#d4af37;
+
+}
+
+.hint-text{
+
+    position:absolute;
+
+    bottom:55px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:.72rem;
+
+    letter-spacing:5px;
+
+    color:#d4af37;
+
+    z-index:40;
+
+}
+
+.hint-text::before,
+.hint-text::after{
+
+    content:"";
+
+    display:inline-block;
+
+    width:70px;
+
+    height:1px;
+
+    background:rgba(212,175,55,.4);
+
+    margin:0 16px;
+
+    vertical-align:middle;
+
+}  
+    @keyframes flapShine{
+0%{
+transform:translateX(-180%) skewX(-28deg);
+opacity:0;
+}
+15%{opacity:1;}
+55%{opacity:.9;}
+100%{
+transform:translateX(220%) skewX(-28deg);
+opacity:0;
+}
+}
+/* ===========================
+   PREMIUM WAX SEAL
+=========================== */
+
+.wax-seal{
+    position:absolute;
+
+    left:50%;
+    top:205px;
+
+    transform:translateX(-50%);
+
+    width:98px;
+    height:98px;
+
+    border-radius:50%;
+
+    z-index:90;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+    isolation:isolate;
+
+    background:
+        radial-gradient(circle at 30% 28%,
+            #ffd6d6 0%,
+            #f05d5d 12%,
+            #cb1f1f 28%,
+            #971010 58%,
+            #5c0404 82%,
+            #300000 100%);
+
+    border:2px solid rgba(255,235,235,.18);
+
+    box-shadow:
+        0 22px 42px rgba(0,0,0,.50),
+        inset -12px -14px 22px rgba(0,0,0,.48),
+        inset 12px 12px 22px rgba(255,255,255,.20),
+        inset 0 0 24px rgba(255,255,255,.08),
+        0 0 18px rgba(145,0,0,.22);
+
+    animation:sealFloat 4.5s ease-in-out infinite;
+}
+.wax-seal::after{
+    content:"✦";
+
+    position:absolute;
+    inset:11px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-family:'Cinzel',serif;
+    font-size:2rem;
+    font-weight:700;
+
+    color:#f4d57d;
+
+    background:
+        radial-gradient(circle,
+            rgba(255,255,255,.08) 0%,
+            rgba(255,255,255,0) 70%);
+
+    border:1px solid rgba(120,0,0,.22);
+
+    box-shadow:
+        inset 0 2px 8px rgba(255,255,255,.10),
+        inset 0 -4px 10px rgba(0,0,0,.30);
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.35),
+        0 0 8px rgba(212,175,55,.35);
+
+    pointer-events:none;
+}
+.wax-seal::before{
+    content:"";
+
+    position:absolute;
+    inset:7px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,221,140,.55);
+
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,.28),
+        inset 0 -3px 8px rgba(0,0,0,.35),
+        0 0 10px rgba(255,210,120,.18);
+
+    opacity:.95;
+}
+
+.wax-inner{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:'Cinzel',serif;
+    font-size:34px;
+    font-weight:700;
+
+    color:#f3d26b;
+
+    text-shadow:
+        0 1px 0 #fff6c9,
+        0 2px 6px rgba(0,0,0,.45);
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+/* --- GÖRSELDEKİ PREMIUM ZARF TASARIMI --- */
+
+#envelope-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #0c0c0c; z-index: 9999 !important;
+    display: flex; justify-content: center; align-items: center;
+    perspective: 2000px; overflow: hidden;
+}
+
+/* Derin Deri/Mat Kağıt Dokusu ve Köşe Çerçevesi */
+.envelope-body {
+    position: absolute; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, #181818 0%, #0d0d0d 100%);
+    z-index: 10;
+}
+
+/* Zarfın Kenarındaki İnce Altın Çizgi */
+.envelope-gold-frame {
+    position: absolute; top: 15px; bottom: 15px; left: 15px; right: 15px;
+    border: 1px solid rgba(191, 149, 63, 0.4); pointer-events: none; z-index: 12;
+}
+
+/* Üçgen Kapak Yapısı */
+/* --- PREMIUM KAPAK VE MÜHÜR SİSTEMİ (KESİN ÇÖZÜM) --- */
+
+.envelope-flap {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 56% !important; 
+    clip-path: polygon(0 0, 100% 0, 50% 100%) !important;
+    transform-origin: top center !important;
+    transform-style: preserve-3d !important;
+    backface-visibility: hidden !important;
+    
+    /* Kapak rengini zarf ile birebir eşitleme */
+    background: #151515 !important; 
+    
+    z-index: 60 !important;
+    overflow: visible !important;
+}
+
+/* ZIMPARALANMIŞ / FIRÇALANMIŞ KALIN ALTIN ÇIZGİLER */
+.envelope-flap::before,
+.envelope-flap::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 50.5% !important;
+    height: 6px !important; /* Kalın ve belirgin çizgi */
+    background: linear-gradient(90deg, 
+        #9a7428 0%, 
+        #bf953f 25%, 
+        #fcf6ba 50%, 
+        #b38728 75%, 
+        #aa771c 100%
+    ) !important;
+    z-index: 65 !important;
+    box-shadow: inset 1px 1px 2px rgba(255,255,255,0.3), 0 3px 6px rgba(0,0,0,0.6) !important;
+}
+
+/* Sol çizginin açısı */
+.envelope-flap::before {
+    left: 0 !important;
+    transform: rotate(29.5deg) !important;
+    transform-origin: left bottom !important;
+}
+
+/* Sağ çizginin açısı */
+.envelope-flap::after {
+    right: 0 !important;
+    transform: rotate(-29.5deg) !important;
+    transform-origin: right bottom !important;
+}
+
+/* MÜHRÜ KAPAĞIN UCUNA İNDİRME VE ÖNE ALMA */
+.envelope-flap .seal-wrapper {
+    position: absolute !important;
+    bottom: -45px !important; /* İsimlerin üzerinden söküp uca indirdik */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 9999 !important; /* Her şeyin en üstünde durmasını sağlar */
+    cursor: pointer !important;
+}
+    position: absolute; top: 8%; left: 50%; transform: translateX(-50%);
+    color: rgba(191, 149, 63, 0.6); font-size: 0.8rem; display: flex; align-items: center; gap: 10px;
+}
+
+/* Yazı Alanı Hizalaması */
+.envelope-flap .envelope-header {
+    position: absolute; top: 18%; left: 50%; transform: translateX(-50%);
+    text-align: center; width: 85%; z-index: 110;
+}
+
+.env-quote {
+    font-family: 'Cinzel', serif; color: #bf953f; font-size: 0.85rem;
+    letter-spacing: 6px; margin-bottom: 25px; opacity: 0.9;
+}
+
+.env-names {
+    font-family: 'Great Vibes', cursive; color: #fdf3cd;
+    font-size: 4rem; line-height: 1.1;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #fcf6ba 0%, #bf953f 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.env-names .amp { font-family: 'Cinzel', serif; font-size: 2.5rem; display: block; margin: 5px 0; }
+
+/* Mührün Üçgen Ucuna Kusursuz Oturtulması */
+.envelope-flap .seal-wrapper {
+    position: absolute; bottom: -45px; left: 50%;
+    transform: translateX(-50%); z-index: 120; cursor: pointer;
+}
+.seal-half-box img {
+    width: 90px; height: 90px; object-fit: contain;
+    filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.5));
+}
+
+/* Alttaki Ok ve Yazı */
+.hint-container {
+    position: absolute; bottom: 4%; left: 50%; transform: translateX(-50%);
+    text-align: center; z-index: 15;
+}
+.hint-arrow { color: #bf953f; font-size: 1.5rem; animation: bounce 2s infinite; }
+.hint-text { font-family: 'Cinzel', serif; font-size: 0.8rem; color: #bf953f; letter-spacing: 3px; margin-top: 5px; }
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+/* Açılış Katlanma Animasyonu */
+#envelope-screen.active .envelope-flap {
+    transition: transform 2.2s cubic-bezier(.66,0,.34,1);
+    transform: rotateX(-180deg);
+}
+    </style>
 </head>
-
 <body>
 
-<section id="intro" class="intro-envelope">
+    <!-- ARKA PLAN GİZLİ YOUTUBE OYNATICI -->
+    <div id="player-container">
+        <iframe id="music-player" src="https://www.youtube.com/embed/Gcxv7i02lXc?enablejsapi=1&controls=0&rel=0" allow="autoplay"></iframe>
+    </div>
 
-    <div class="envelope">
+    <!-- SES KONTROLÜ -->
+    <button class="audio-control" id="audioToggle" onclick="toggleMusic()">
+        <i class="fas fa-volume-up"></i>
+    </button>
 
-        <div class="envelope-back"></div>
+   <!-- KOMPLE KÂĞIT DOKULU LÜKS ZARF SİSTEMİ -->
+<div id="envelope-screen">
+    
+    <!-- Parıltılar (Eski parıltıların aynen korundu) -->
+    <div class="sparkle" style="top:18%;left:18%;animation-delay:0s;"></div>
+    <div class="sparkle" style="top:25%;right:20%;animation-delay:.7s;"></div>
+    <div class="sparkle" style="top:42%;left:12%;animation-delay:1.2s;"></div>
+    <div class="sparkle" style="top:60%;right:18%;animation-delay:2s;"></div>
+    <div class="sparkle" style="top:72%;left:28%;animation-delay:2.6s;"></div>
+    <div class="sparkle" style="top:70%;right:12%;animation-delay:1.8s;"></div>
+    <div class="sparkle" style="top:80%;right:35%;animation-delay:3s;"></div>
+    <div class="sparkle" style="top:12%;left:55%;animation-delay:1s;"></div>
+    <div class="sparkle" style="top:50%;left:50%;animation-delay:2.3s;"></div>
+    <div class="sparkle" style="top:86%;right:12%;animation-delay:3.4s;"></div>
 
-        <div class="envelope-letter">
+    <!-- Arka Gövde (Zarfın Alt Kısmı) -->
+    <div class="envelope-body">
+        <div class="envelope-gold-frame"></div>
+        
+        <!-- Alttaki Ok ve Dokunun Yazısı -->
+        <div class="hint-container">
+            <div class="hint-arrow">↓</div>
+            <div class="hint-text">MÜHRE DOKUNUNUZ</div>
+        </div>
+    </div>
 
-            <div class="letter-card">
+    <!-- 3D KATLANAN ÜÇGEN KAPAK SİSTEMİ -->
+    <div class="envelope-flap-shadow"></div>
+    <div class="envelope-flap">
+        
+        <!-- Üst Süs Detayı -->
+        <div class="top-ornament">
+            <span class="line">─</span><span class="heart">♥</span><span class="line">─</span>
+        </div>
 
-                <p class="letter-small">
-                    İKİ KALP • TEK ÖMÜR
-                </p>
+        <!-- İsimler ve Söz -->
+        <div class="envelope-header">
+            <div class="env-quote">İKİ KALP... TEK ÖMÜR... SONSUZ SEVGİ...</div>
+            <div class="env-names">Rashidam<br><span class="amp">&</span><br>Hasan Soner</div>
+        </div>
+        
+        <!-- Kapağın İki Kenarındaki Altın Çizgiler (Clip-path için özel hile) -->
+        <div class="flap-border-left"></div>
+        <div class="flap-border-right"></div>
 
-                <h1>
-                    Rashidam
-                    <span>&</span>
-                    Hasan Soner
-                </h1>
-
+        <!-- Tam Ortadaki Mühür -->
+        <div class="seal-wrapper" onclick="executeEnvelopeOpening()">
+            <div class="seal-half-box seal-left-side">
+                <img src="muhur.png.PNG" alt="Mühür Sol">
             </div>
-
+            <div class="seal-half-box seal-right-side">
+                <img src="muhur.png.PNG" alt="Mühür Sağ">
+            </div>
         </div>
-
-        <div class="envelope-flap"></div>
-
-        <div class="seal" id="openInvitation">
-
-            <img
-                src="images/seal.png.PNG"
-                alt="Seal">
-
-        </div>
-
-        <p class="touch-text">
-            Mühüre Dokunun
-        </p>
-
     </div>
 
-</section>
-<main id="invitation">
-
-<section class="hero">
-<div class="flower flower-left">❀</div>
-<div class="flower flower-right">❀</div>
-<div class="hero-content">
-
-<h3>DÜĞÜN DAVETİ</h3>
-
-<h1>Rashidam</h1>
-
-<span>&</span>
-
-<h1>Hasan Soner</h1>
-
-<p class="date">
-21 Ağustos 2026
-</p>
-
-<p class="time">
-Saat 19:00
-</p>
-
-<p class="location">
-Altınkum Sosyal Tesisleri
-<br>
-Atakum / Samsun
-</p>
-
-<div class="scrollDown">
-
-↓
-
-</div>
-
-</div>
-<div class="hero-divider">
-    ✦ ✦ ✦
-</div>
-
-<p class="invite-text">
-    Hayatlarımızı birleştireceğimiz bu
-    anlamlı günde sizleri aramızda görmekten
-    büyük mutluluk duyacağız.
-</p>
-
-<div class="event-card">
-
-    <h3>Düğün Programı</h3>
-
-    <div class="event-item">
-        <strong>Konvoy</strong><br>
-        18:30
+    <!-- Saray Tarzı Köşe Motifleri -->
+    <div class="envelope-ornament-frame">
+        <div class="ornament top-left"></div>
+        <div class="ornament top-right"></div>
+        <div class="ornament bottom-left"></div>
+        <div class="ornament bottom-right"></div>
     </div>
-
-    <div class="event-item">
-        <strong>Düğün</strong><br>
-        19:00
-    </div>
-
 </div>
-</section>
-<section class="countdown">
 
-    <h2>Büyük Gün İçin</h2>
+    <!-- İÇ DAVETİYE KARTI -->
+    <div class="main-card">
+        
+        <div class="card-headline">BU ÖZEL GÜNÜMÜZE DAVETLİSİNİZ</div>
+        
+        <div class="card-names">
+            RASHIDAM
+            <span class="card-ampersand">&</span>
+            HASAN SONER
+        </div>
+        
+        <div class="divider-heart">♥</div>
+        
+        <div class="card-date-main">21 AĞUSTOS 2026</div>
 
-    <div id="countdown">
-
-        <div class="time-box">
-            <span id="days">0</span>
-            <small>Gün</small>
+        <!-- DAİRESEL GERİ SAYIM SAYACI -->
+        <div class="counter-section">
+            <div class="counter-title">➔ DÜĞÜNÜMÜZE KALAN SÜRE ➔</div>
+            <div class="counter-grid">
+                <div class="counter-box"><div class="counter-num" id="days">00</div><div class="counter-label">Gün</div></div>
+                <div class="counter-box"><div class="counter-num" id="hours">00</div><div class="counter-label">Saat</div></div>
+                <div class="counter-box"><div class="counter-num" id="minutes">00</div><div class="counter-label">Dakika</div></div>
+                <div class="counter-box"><div class="counter-num" id="seconds">00</div><div class="counter-label">Saniye</div></div>
+            </div>
         </div>
 
-        <div class="time-box">
-            <span id="hours">0</span>
-            <small>Saat</small>
+        <!-- İKONLU MENÜ GEZİNTİSİ -->
+        <div class="nav-menu-grid">
+            <a href="#" class="nav-btn-item"><i class="fas fa-ring"></i>Davetİye</a>
+            <a href="#tarih-alanı" class="nav-btn-item"><i class="fas fa-calendar-alt"></i>Tarİh & Saat</a>
+            <a href="#harita-alanı" class="nav-btn-item"><i class="fas fa-map-marker-alt"></i>Konum</a>
+            <a href="#" class="nav-btn-item"><i class="fas fa-images"></i>Galerİ</a>
+            <a href="#" class="nav-btn-item"><i class="fas fa-gift"></i>Hedİyeler</a>
+            <a href="#" class="nav-btn-item"><i class="fas fa-envelope"></i>İletİşİm</a>
         </div>
 
-        <div class="time-box">
-            <span id="minutes">0</span>
-            <small>Dakika</small>
+        <!-- DÜĞÜN BİLGİLERİ SATIRI -->
+        <div id="tarih-alanı">
+            <div class="details-title">➔ DÜĞÜN BİLGİLERİ ➔</div>
+            <div class="details-row">
+                <div class="detail-block">
+                    <i class="fas fa-calendar-check"></i>
+                    <h4>21 AĞUSTOS 2026</h4>
+                    <p>Cuma</p>
+                </div>
+                <div class="detail-block">
+                    <i class="fas fa-clock"></i>
+                    <h4>19:00</h4>
+                    <p>Akşam</p>
+                </div>
+                <div class="detail-block">
+                    <i class="fas fa-hotel"></i>
+                    <h4>ALTINKUM TESİSLERİ</h4>
+                    <p>Atakum / SAMSUN</p>
+                </div>
+            </div>
         </div>
 
-        <div class="time-box">
-            <span id="seconds">0</span>
-            <small>Saniye</small>
+        <!-- HARİTA KARTI BÖLÜMÜ -->
+        <div id="harita-alanı">
+            <div class="map-section-title">➔ KONUM ➔</div>
+            <div class="map-embed-box">
+                <div class="map-info-text">
+                    <h3>ALTINKUM SOSYAL TESİSLERİ</h3>
+                    <p>ATAKUM / SAMSUN</p>
+                    <a href="https://maps.google.com/?q=Altinkum+Sosyal+Tesisleri+Atakum+Samsun"
+ 
+               target="_blank" 
+               class="map-button">
+               Haritada Aç / Yol Tarifi
+            </a>
+
+            <iframe class="map-iframe" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.467479708915!2d36.2163459!3d41.3639423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4087df606994bc1d%3A0xc6cb1c636f32e987!2sAlt%C4%B1nkum%20Sosyal%20Tesisleri!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str" 
+                    width="100%" 
+                    height="250" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+            </iframe>
+
+        <!-- SÖZ VE ALT ALAN -->
+        <div class="footer-poem-area">
+            <div class="footer-main-quote">Sizleri de Aramızda Görmekten Mutluluk Duyarız</div>
+            <div class="divider-heart" style="margin: 15px 0;">♥</div>
+            <p class="footer-sub-text">
+                Hayatlarımızı birleştirdiğimiz bu özel günümüzde siz değerli dostlarımızı aramizda görmekten mutluluk duyarız.
+            </p>
         </div>
 
     </div>
 
-</section>
-<section class="location-section">
+    <!-- SCRIPT KONTROLLERİ -->
+    <script>
+        let isMuted = false;
+        let player;
 
-    <h2>Düğün Konumu</h2>
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('music-player');
+        }
 
-    <p>
-        Altınkum Sosyal Tesisleri
-        <br>
-        Atakum / Samsun
-    </p>
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    <a
-        class="map-button"
-        href="https://www.google.com/maps?q=41.4009396,36.1875547"
-        target="_blank">
+        function executeEnvelopeOpening() {
 
-        📍 Haritada Aç
+    const screen = document.getElementById('envelope-screen');
+    const flap = document.querySelector('.envelope-flap');
+    const seal = document.querySelector('.seal-wrapper');
+    const invitation = document.querySelector('.invitation-card');
+    const audioBtn = document.getElementById('audioToggle');
 
-    </a>
+    screen.classList.add('active');
 
-</section>    
-</main>
-<audio id="bgMusic" loop>
-    <source src="music/music.mp3.mp3" type="audio/mpeg">
-</audio>
-<script src="js/app.js"></script>
+    if (player && typeof player.playVideo === 'function') {
+        player.playVideo();
+    }
 
+    audioBtn.style.display = 'flex';
+
+    /* 1- Mühür hafif küçülüp kayboluyor */
+    setTimeout(() => {
+        if (seal) {
+            seal.style.transition =
+                "transform .8s ease, opacity .8s ease";
+            seal.style.transform =
+                "translateX(-50%) scale(.78)";
+            seal.style.opacity = "0";
+        }
+    }, 250);
+
+    /* 2- Kapak ağır şekilde açılıyor */
+    setTimeout(() => {
+        if (flap) {
+            flap.style.transition =
+                "transform 2s cubic-bezier(.66,0,.34,1)";
+            flap.style.transform =
+                "rotateX(-178deg)";
+        }
+    }, 700);
+
+    /* 3- Davetiye yavaşça yükseliyor */
+    setTimeout(() => {
+        if (invitation) {
+            invitation.style.transition =
+                "transform 1.8s ease, opacity 1.8s ease";
+
+            invitation.style.transform =
+                "translateY(-65px) scale(1)";
+
+            invitation.style.opacity = "1";
+        }
+    }, 1700);
+
+    /* 4- En son ekran kayıyor */
+    setTimeout(() => {
+        screen.classList.add('open');
+    }, 3600);
+
+}
+
+        function toggleMusic() {
+            const icon = document.querySelector('#audioToggle i');
+            if (!isMuted) {
+                if (player && typeof player.pauseVideo === 'function') { player.pauseVideo(); }
+                icon.className = 'fas fa-volume-mute';
+                isMuted = true;
+            } else {
+                if (player && typeof player.playVideo === 'function') { player.playVideo(); }
+                icon.className = 'fas fa-volume-up';
+                isMuted = false;
+            }
+        }
+
+        const targetWeddingDate = new Date("August 21, 2026 19:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = targetWeddingDate - now;
+            if (diff < 0) return;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+    </script>
 </body>
 </html>
